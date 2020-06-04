@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WanderPayment</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 1084px)" href="css/trekPayment.css">
+	<!-- 
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 601px) and (max-width: 1083px)" href="css/index600up.css">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="css/index600down.css"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700,900&display=swap" rel="stylesheet">
+
+	<!-- <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.min.css"> -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="jquery.datetimepicker.full.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="header" style="background-image: linear-gradient(to right, purple, #1A1780);">
+		<div class="row header">
+			<div class="col-xs-2 col-sm-2 col-md-2 logo">
+				<img src="logo/logo1.png" alt="">
+			</div>
+			<div class="col-xs-8 col-sm-6 col-md-7 col-xs-offset-2 col-sm-offset-4 col-md-offset-3 certify">
+				<div class="row">
+					<div class="col-xs-4 dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Treks<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Stays</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Treks</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Road Trips</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Experiences</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Event calendar</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Others</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-3 col-xs-offset-5" style="padding-left: 0;">
+						<button class="btn btn-primary" data-toggle="modal" data-target="#myModalLogin">
+							Login or Create Account
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal" id="myModalLogin">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body row">
+							<div class="col-xs-6">
+								<div class="leaf1">
+									<img src="login/leaf1.png">
+								</div>
+								<div class="leaf-banda">
+									<div class="leaf2">
+										<img src="login/leaf2.png">
+									</div>
+									<div class="banda">
+										<img src="login/banda.png">
+									</div>
+								</div>
+								<div class="wander-text">
+									<h3>WanderTribe</h3>
+									<p>
+										One Stop Destination for All Your Authentic Offbeat Travel & Experience.
+									</p>
+								</div>
+								<div class="leaf3">
+									<img src="login/leaf3.png">
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div style="margin-left: 10px; margin-right: 57px;">
+									<div class="login-with">
+										<h2>Log in with</h2>
+										<img src="login/google.png">
+										<p>OR</p>
+										<img src="login/fb.png">
+									</div>
+									<div>
+										<form action="https://api.wandertribe.in/api/login">
+											<div class="form-group">
+												<label for="email-mob">Registered Email/Mobile no.</label>
+												<input type="text" name="email-mob" class="form-control"placeholder="Enter Email/Mobile no.">
+											</div>
+											<div class="form-group">
+												<label for="pwd">Password</label>
+												<input type="password" name="pwd" class="form-control"  placeholder="Enter Password">
+
+											</div>
+											<button type="submit">LOGIN</button>
+										</form>
+										<div style="margin-top: 25px;">
+											<center><a href="#myModalReset" class="forgot" data-toggle="modal" data-dismiss="modal">Forgot Password?</a></center>
+										</div>
+
+										<p>New to WanderTribe? <a href="#myModalSignup" data-toggle="modal" data-dismiss="modal">
+										Create account now.</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal" id="myModalSignup">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="container" style="width: 100%; padding: 0;">
+								<div class="row" style="margin: 0;">
+									<div class="col-xs-6">
+										<div class="leaf1">
+											<img src="signup/leaf1.png">
+										</div>
+										<div class="leaf-banda">
+											<div class="leaf2">
+												<img src="signup/leaf2.png">
+											</div>
+											<div class="banda">
+												<img src="signup/banda.png">
+											</div>
+										</div>
+										<div class="wander-text">
+											<h3>WanderTribe</h3>
+											<p>
+												Aggregator for Alternate Travel Experience.
+											</p>
+										</div>
+
+										<div class="leaf3">
+											<img src="signup/leaf3.png">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div style="margin-left: 10px; margin-right: 57px;">
+											<div class="signup-with">
+												<h2>Signup with</h2>
+												<img src="login/google.png">
+												<p>OR</p>
+												<img src="login/fb.png">
+											</div>
+											<div>
+												<form>
+													<div class="form-group">
+														<label for="name">Full Name</label>
+														<input type="text" name="name" class="form-control"placeholder="Enter full name">
+													</div>
+													<input type="checkbox" name="check-business"> 
+													<label class="control-label">BUSINESS NAME <span>(only for business user)</span>
+													</label>
+													<div class="form-group">
+														<input type="text" name="company" class="form-control"placeholder="Enter your company name">
+													</div>
+													<div class="form-group">
+														<label for="no">Enter Mobile no.</label>
+														<input type="text" name="no" class="form-control"placeholder="Enter your mobile no.">
+													</div>
+													<div class="form-group">
+														<label for="email">Email ID (optional)</label>
+														<input type="email" name="email" class="form-control"placeholder="Enter your email-id">
+													</div>
+
+													<div class="form-group">
+														<label for="pwd">Password</label>
+														<input type="password" name="pwd" class="form-control"placeholder="Enter Password">
+													</div>
+													<div class="form-group">
+														<label for="re-pwd">Confirm Password</label>
+														<input type="password" name="re-pwd" class="form-control"placeholder="Re-enter new Password">
+													</div>
+
+													<button type="submit" class="btn btn-primary"> 
+														SIGNUP
+													</button>
+												</form>
+												<div class="links">
+													<p>Already have an account? <a href="#myModalLogin"  data-toggle="modal" data-dismiss="modal">
+													Log in.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal" id="myModalReset">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="container" style="width: 100%; padding: 0;">
+								<div class="row" style="margin: 0;">
+									<div class="col-xs-6">
+										<div class="leaf1">
+											<img src="login/leaf1.png">
+										</div>
+										<div class="leaf-que">
+											<div class="leaf2">
+												<img src="login/leaf2.png">
+											</div>
+											<div class="que">
+												<img src="reset/que.png">
+											</div>
+										</div>
+										<div class="leaf3">
+											<img src="login/leaf3.png">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div style="margin-left: 10px; margin-right: 92px;">
+											<div class="reset-text">
+												<h3>Reset Password</h3>
+												<p>
+													We will send an OTP to your registered mobile number or email.
+												</p>
+											</div>
+											<div>
+												<form>
+													<div class="form-group">
+														<label for="otp">Enter Registered Email/Mobile no.</label>
+														<input type="text" name="otp" class="form-control"placeholder="Enter Email/Mobile no.">
+													</div>
+													<button data-toggle="modal" data-target="#myModalReset1" data-dismiss="modal"> 
+														GET OTP
+													</button>
+												</form>
+												<div class="links">
+													<a href="#myModalSignup" data-toggle="modal" data-dismiss="modal">Create account now</a><a href="#"> |</a> <a href="#myModalLogin"  data-toggle="modal" data-dismiss="modal">Login</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal" id="myModalReset1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="container" style="width: 100%; padding: 0;">
+								<div class="row" style="margin: 0;">
+									<div class="col-xs-6">
+										<div class="leaf1">
+											<img src="login/leaf1.png">
+										</div>
+										<div class="leaf-que">
+											<div class="leaf2">
+												<img src="login/leaf2.png">
+											</div>
+											<div class="que">
+												<img src="reset/que.png">
+											</div>
+										</div>
+										<div class="leaf3">
+											<img src="login/leaf3.png">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div style="margin-left: 10px; margin-right: 92px;">
+											<div class="reset-text">
+												<h3>Reset Password</h3>
+												<p>
+													We have sent an OTP to your registered mobile number or email, please check.
+												</p>
+											</div>
+											<div>
+												<form>
+													<div class="form-group">
+														<label for="otp">Enter OTP</label>
+														<input type="text" name="otp" class="form-control"placeholder="Enter OTP">
+													</div>
+													<button data-toggle="modal" data-target="#myModalReset2" data-dismiss="modal"> 
+														VERIFY OTP
+													</button>
+												</form>
+												<div class="links">
+													<a href="#myModalSignup" data-toggle="modal" data-dismiss="modal">Create account now</a><a href="#"> |</a> <a href="#myModalLogin"  data-toggle="modal" data-dismiss="modal">Login</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal" id="myModalReset2">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="container" style="width: 100%; padding: 0;">
+								<div class="row" style="margin: 0;">
+									<div class="col-xs-6">
+										<div class="leaf1">
+											<img src="login/leaf1.png">
+										</div>
+										<div class="leaf-que">
+											<div class="leaf2">
+												<img src="login/leaf2.png">
+											</div>
+											<div class="que">
+												<img src="reset/que.png">
+											</div>
+										</div>
+										<div class="leaf3">
+											<img src="login/leaf3.png">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div style="margin-left: 10px; margin-right: 92px;">
+											<div class="reset-text">
+												<h3>Reset Password</h3>
+												<p>
+													Enter your new password.
+												</p>
+											</div>
+											<div>
+												<form>
+													<div class="form-group">
+														<label for="pwd">Enter new Password</label>
+														<input type="password" name="pwd" class="form-control"placeholder="Enter new Password">
+													</div>
+													<div class="form-group">
+														<label for="re-pwd">Confirm Password</label>
+														<input type="password" name="re-pwd" class="form-control"placeholder="Re-enter new Password">
+													</div>
+
+													<button type="submit"> 
+														RESET PASSWORD
+													</button>
+												</form>
+												<div class="links">
+													<a href="#myModalSignup" data-toggle="modal" data-dismiss="modal">Create account now</a><a href="#"> |</a> <a href="#myModalLogin"  data-toggle="modal" data-dismiss="modal">Login</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="trek-pagination">
+		<h2>Treks > Himachal > Kasol Trek > Package Details > Traveller Information > <span>Payment</span></h2>
+	</div>
+
+	<div class="packProgress">
+		<div>
+			<div id="circle1"></div>
+			<hr>
+			<div id="circle1"></div>
+			<hr>
+			<div id="circle1"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4" style="padding: 0;">
+				<h3>Package details</h3>
+			</div>
+			<div class="col-sm-4">
+				<h3 style="text-align: center;">Traveller Information</h3>
+			</div>
+			<div class="col-sm-4">
+				<h3 style="float: right; padding-right: 16px;">Payment</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="row payment">
+		<div class="col-sm-3">
+			Payment
+		</div>
+	</div>
+
+	<div class="container contact-us">
+		<div class="message">
+			<h3>World is moving very fast.
+				<span>Send us your email, we will make sure you never miss a thing.</span>
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">
+				<img src="icons/email.png" alt="">
+			</div>
+			<div class="col-xs-11">
+				<form>
+					<div class="row">
+						<div class="col-sm-5 col-md-7 form-group" style="margin: 0;">
+							<input type="text" placeholder="enter your email address"></input>
+						</div>
+						<div class="col-sm-7 col-md-5 form-group">
+							<button class="btn btn-danger" type="reset">
+								DELETE
+							</button>
+							<button class="btn btn-default" type="submit">SEND</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="social">
+		<h3>Follow us on</h3>
+		<center>
+			<ul class="list-inline">
+				<li><a href="#"><img src="icons/facebook.png" alt="" style="width: 15px; height: 30px;"></a></li>
+				<li><a href="#"><img src="icons/instagram.png" alt="" style="width: 27px; height: 25px;"></a></li>
+				<li><a href="#"><img src="icons/youtube.png" alt="" style="width: 30px; height: 20px;"></a></li>
+			</ul>
+			<p>#wandertribe</p>
+		</center>
+	</div>
+</div>
+
+<footer class="footer">
+	<div class="row">
+		<div class="col-xs-4 footer1">
+			<div class="row">
+				<div class="col-xs-2" style="padding-right: 0;">
+					<img src="logo/logo3.png" alt="">
+				</div>
+				<div class="col-xs-10" style="height: 37.3px; padding-left: 0;">
+					<a href="#"><h3>WanderTribe</h3></a>
+				</div>
+			</div>
+			<div>
+				<p>An online platform allowing users to experience properties and life in offbeat locations across India. In this journey, we are connecting Property Owners, Travel Agents, Travel Curators and other Travel related Suppliers to transform their business and opening new revenue streams for them.</p>
+			</div>
+
+			<div class="row copyright">
+				<div class="col-xs-1" style="padding-right: 0; vertical-align: middle;">
+					<img src="icons/copyright.png">
+				</div>
+				<div class="col-xs-11" style="padding: 0;">
+					<h6>Copyright.2019 Unfolding Skies Private Limited.All Rights Reserved</h6>
+				</div>
+			</div>
+		</div>	
+		<div class="col-xs-3 footer2">
+			<a href="#"><h3>TERMS & CONDITIONS</h3></a>
+			<a href="#"><h4>GUEST POLICIES</h4></a>
+			<a href="#"><h4>PRIVACY POLICIES</h4></a>
+			<a href="#"><h4>CANCELLATION POLICIES</h4></a>
+		</div>
+
+		<div class="col-xs-3 footer3">
+			<a href="#"><h3>TAGS</h3></a>
+			<a href="#"><h4>WHY US</h4></a>
+			<a href="#"><h4>ABOUT US</h4></a>
+			<a href="#"><h4>CONTACT US</h4></a>
+			<a href="#"><h4>GO GREEN</h4></a>
+			<a href="#"><h4>DESTINATION MANAGEMENT</h4></a>
+		</div>
+
+		<div class="col-xs-2 footer4">
+			<a href="#"><h3>LOGINS</h3></a>
+			<a href="#"><h4>BUSINESS LOGIN</h4></a>
+			<a href="#"><h4>LIST YOUR PROPERTY</h4></a>
+			<a href="#"><h4>CANCEL BOOKING</h4></a>
+		</div>
+	</div>
+</footer>
+
+</body>
+
+<script>
+	$('body').click(function () {
+		$('.packPlace button').css('background-color', '#540a05');
+		$('.packPlace button').css('opacity', 0.2);
+		setTimeout(function () {
+			$('.packPlace button').css({'background-color': '#FF5700', 'opacity': 1});
+		}, 500);
+
+	})
+
+	// $('#dateChosen').datetimepicker();
+
+	$('#plusCircle').click(function () {
+		var val=$('#people').attr('placeholder');
+		var num=Number(val)+1;
+		val=String(num);
+		document.getElementById("people").placeholder=val;
+	})
+
+	$('#minusCircle').click(function () {
+		if($('#people').attr('placeholder') > 0){
+			document.getElementById("people").placeholder=
+			String( Number( $('#people').attr('placeholder') ) -1 );
+		}
+	}) 
+
+</script>
+</html>

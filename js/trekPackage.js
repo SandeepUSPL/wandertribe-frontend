@@ -26,6 +26,12 @@ JSON.parse(localStorage.getItem('trek_dates')).forEach(function(item) {
 document.querySelector('.form-query form select').value =
     localStorage.getItem('trek_dates_value');
 
+document.querySelector("#sel").addEventListener('change', function(e) {
+    document.querySelector('.packPlace>h2').innerHTML =
+        (document.querySelector("#sel").value !== "Choose your date") ?
+        `(From ${document.querySelector("#sel").value})` : '';
+});
+
 document.getElementById("people").value =
     localStorage.getItem('trek_people');
 
@@ -55,8 +61,8 @@ document.querySelector('#total-price').innerHTML =
 document.querySelector('.packPlace .accomodation h5').innerHTML =
     `Total Payable amount including 5% GST = <span> ₹ ${1.05*price}</span>`;
 
-document.querySelector("#sel").addEventListener('change', function(e) {
-    document.querySelector('.packPlace>h2').innerHTML =
-        (document.querySelector("#sel").value !== "Choose your date") ?
-        `(From ${document.querySelector("#sel").value})` : '';
+document.querySelector('.packPlace button').addEventListener('click', function() {
+    localStorage.setItem('grand_total', document.querySelector('.packPlace .accomodation h5 span').textContent);
+    localStorage.setItem('trek_people', document.getElementById("people").value);
+    top.location.href = 'trekTraveller.php';
 })

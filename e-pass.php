@@ -25,16 +25,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149144948-1"></script>
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 1084px)" href="css/e-pass.css">
-    <link rel="stylesheet" type="text/css" media="screen and (min-width: 601px) and (max-width: 1083px)" href="applyLoan600up.css">
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="css/applyLoan600down.css">
-    <!--    <link rel = "stylesheet" type="text/css" href="css/main.css">-->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700,900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 601px) and (max-width: 1083px)" href="css/e-pass600up.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="css/e-pass600up.css">
+    
     <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="css/index600.css"> -->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -61,7 +60,7 @@
             <h6>Request type</h6>
 
             <div class="form-group">
-                <select>
+                <select class="request-type">
                     <option></option>
                 </select>
             </div>
@@ -71,10 +70,10 @@
             <div class="row">
                 <div class="form-group col-xs-6">
                     <label>Name</label>
-                    <input type="text" name="" class="form-control" placeholder="Enter Full Name">
+                    <input type="text" name="e-pass-name" class="form-control" placeholder="Enter Full Name">
                 </div>
                 <div class="form-group col-xs-6 upload">
-                    <input type="text" name="" class="form-control" placeholder="Upload Your Photo">
+                    <input type="text" name="e-pass-photo" class="form-control" placeholder="Upload Your Photo">
                     <div>
                         <h2><i>proofimage.jpeg </i><span>X</span></h2>
                         <p>uploaded</p>
@@ -85,19 +84,19 @@
 
             <div class="form-group">
                 <label>Gender</label>
-                <select style="display: block;">
+                <select class="e-pass-gender" style="display: block;">
                     <option>Select gender</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label>Mobile number</label>
-                <input type="number" name="" class="form-control" placeholder="Enter 10 Digit Mobile no.">
+                <input type="number" name="e-pass-mobile" class="form-control" placeholder="Enter 10 Digit Mobile no.">
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="" class="form-control" placeholder="example@email.com">
+                <input type="email" name="e-pass-email" class="form-control" placeholder="example@email.com">
             </div>
 
             <label>Date of Birth</label>
@@ -116,25 +115,24 @@
 
             <h6>Address information</h6>
 
-
-            <div class="form-group">
+            <div class="form-group travelling-from">
                 <label>Travelling from</label>
                 <input type="text" name="" class="form-control" placeholder="House no./colony/landmark">
                 <div class="single-line">
                     <input type="text" name="" class="form-control city" placeholder="City">
-                    <input type="text" name="" class="form-control pin" placeholder="Pin Code">
+                    <input type="number" name="" class="form-control pin" placeholder="Pin Code">
                     <select>
                         <option>State</option>
                     </select>
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group travelling-to">
                 <label>Travelling to</label>
                 <input type="text" name="" class="form-control" placeholder="House no./colony/landmark">
                 <div class="single-line">
                     <input type="text" name="" class="form-control city" placeholder="City">
-                    <input type="text" name="" class="form-control pin" placeholder="Pin Code">
+                    <input type="number" name="" class="form-control pin" placeholder="Pin Code">
                     <select>
                         <option>State</option>
                     </select>
@@ -145,17 +143,17 @@
 
             <div class="form-group">
                 <label class="bold">Government Id number</label>
-                <select style="width: 100%">
+                <select class="gov-id" style="width: 100%">
                     <option></option>
                 </select>
             </div>
 
             <div class="row">
                 <div class="form-group col-xs-6">
-                    <input type="text" name="" class="form-control" placeholder="Enter id number">
+                    <input type="text" name="gov-id-no" class="form-control" placeholder="Enter id number">
                 </div>
                 <div class="form-group col-xs-6 upload">
-                    <input type="text" name="" class="form-control" placeholder="Upload id scan copy" style="margin: 0;">
+                    <input type="text" name="gov-id-upload" class="form-control" placeholder="Upload id scan copy" style="margin: 0;">
                     <div>
                         <h2><i>proofimage.jpeg </i><span>X</span></h2>
                         <p>uploaded</p>
@@ -169,10 +167,10 @@
             <div class="row">
                 <div class="form-group col-xs-6">
                     <label class="bold">Vehicle Number:</label>
-                    <input type="text" name="" class="form-control" placeholder="Enter vehicle number">
+                    <input type="text" name="vehicle-no" class="form-control" placeholder="Enter vehicle number">
                 </div>
                 <div class="form-group col-xs-6 upload">
-                    <input type="text" name="" class="form-control" placeholder="Upload RC of Vehicle">
+                    <input type="text" name="vehicle-rc" class="form-control" placeholder="Upload RC of Vehicle">
                     <div>
                         <h2><i>proofimage.jpeg </i><span>X</span></h2>
                         <p>uploaded</p>
@@ -181,14 +179,14 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group additional-person">
                 <label class="bold">Additional Accompanying Persons:</label>
-                <input type="email" name="" class="form-control" placeholder="0" style="width: 50%;">
+                <input type="number" name="" class="form-control" placeholder="0" style="width: 50%;">
             </div>
 
             <h6>Pass validity</h6>
 
-            <div class="form-group row pass-validity">
+            <div class="row pass-validity">
                 <div class="col-xs-6">
                     <label>Pass valid from</label>
                     <input type="date" name="" class="form-control" placeholder="dd/mm/yyyy">
@@ -203,7 +201,7 @@
 
             <div class="form-group">
                 <label class="bold">ePass Required For</label>
-                <select style="display: block;">
+                <select class="ePass-required" style="display: block;">
                     <option></option>
                 </select>
                 <span>One way Round trip</span>
@@ -220,10 +218,7 @@
         </form>
 
     </div>
-
-    <!-- <script type="text/javascript">
-        document.querySelector('.upload input').style.backgroundImage = 'url("new_img/loan/file-upload-icon.png")';
-    </script> -->
+    <script type="text/javascript" src="js/e-pass.js"></script>
 </body>
 
 </html>
